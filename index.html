@@ -4,19 +4,54 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dynamic Landing Page</title>
-    <link rel="stylesheet" href="css/style.css"/>
-    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"/>
+    <link rel="stylesheet" href="css/style.css" />
+    <link href="https://fonts.googleapis.com/css?family=Quicksand&display=swap" />
 </head>
 <body>
     <time id="time" class="time-style"></time>
-    <h1>
-        <span id="greeting"></span>
-        <span id="name" contenteditable="true"></span>
-    </h1>
-
-    <h2> Какая у тебя задача на сегодня ? </h2>
-    <h2 id="focus" contenteditable="true"></h2>
-
+    <form action="" class="greeting" >
+        <h2 id="greeting" class="greeting-header"></h2>
+        <input id="name" class="greeting-input" />
+    </form>
+    <form action="" class="task" >
+        <h2 class="task-header">Какая у тебя задача на сегодня ?</h2>
+        <input id="focus" class="task-input" type="text" onkeydown="this.style.width = ((this.value.length + 1) * 8) + 'px';"/>
+    </form>
     <script src="js/main.js"></script>
 </body>
 </html>
+
+<!--
+    var hide = document.getElementById('hide');
+var txt = document.getElementById('txt');
+resize();
+txt.addEventListener("input", resize);
+
+function resize() {
+  hide.textContent = txt.value;
+  txt.style.width = hide.offsetWidth + "px";
+}
+body,
+#txt,
+#hide {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+#txt {
+  border: none;
+  color: #888;
+  min-width: 10px;
+}
+
+#hide {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  white-space: pre;
+}
+<p>Lorem ipsum
+  <span id="hide"></span><input id="txt" type="text" value="type here ..."> egestas arcu.
+</p>
+-->

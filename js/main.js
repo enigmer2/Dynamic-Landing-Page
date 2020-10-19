@@ -49,9 +49,9 @@ function setBgAndTitle(hour) {
 // изменение локальногог хранилища имени
 function setValueFromLocalStorage(localStorageId, element) {
   if (localStorage.getItem(localStorageId) === null) {
-    element.textContent = `[enter your ${localStorageId}]`;
+    element.value = `[enter your ${localStorageId}]`;
   } else {
-    element.textContent = localStorage.getItem(localStorageId);
+    element.value = localStorage.getItem(localStorageId);
   }
 }
 
@@ -59,11 +59,11 @@ function setValueFromLocalStorage(localStorageId, element) {
 function setValueToLocalStorage(e, localStorageId) {
   if (e.type === "keypress") {
     if (e.witch == 13 || e.keyCode == 13) {
-      localStorage.setItem(localStorageId, e.target.innerText);
+      localStorage.setItem(localStorageId, e.target.value);
       e.target.blur();
     }
   } else {
-    localStorage.setItem(localStorageId, e.target.innerText);
+    localStorage.setItem(localStorageId, e.target.value);
   }
 }
 

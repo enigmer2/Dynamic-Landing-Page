@@ -29,7 +29,27 @@ body {
 h1 {
   margin-bottom: 3rem;
 }
-h2 {
+
+
+.greeting{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.greeting-input, .task-input {
+  border: 0px;
+  background: transparent;
+  font-size: 2rem;
+  display: block;
+  margin: 20px;
+  width: auto;
+}
+.greeting-header{}
+
+.task{
+}
+
+.task-header{
   margin-bottom: 0.5rem;
   opacity: 0.6;
 }
