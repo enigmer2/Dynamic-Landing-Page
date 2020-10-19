@@ -24,23 +24,23 @@ function addZero(n) {
 function setBgAndTitle(hour) {
   if (hour < 12) {
     //утро
-    document.body.style.backgroundImage = "url('../img/1.jpg')";
+    document.body.style.backgroundImage = "url('img/1.jpg')";
     greeting.textContent = "Доброе утро";
   } else if (hour < 17) {
     // полдень
-    document.body.style.backgroundImage = "url('../img/2.jpg')";
+    document.body.style.backgroundImage = "url('img/2.jpg')";
     greeting.textContent = "Добрый день";
     document.body.style.color = "white";
     document.body.style.textShadow = "0 0 20px #000";
   } else if (hour < 20) {
     // вечер
-    document.body.style.backgroundImage = "url('../img/3.jpg')";
+    document.body.style.backgroundImage = "url('img/3.jpg')";
     greeting.textContent = "Добрый вечер";
     document.body.style.color = "white";
     document.body.style.textShadow = "0 0 20px #000";
   } else {
     // ночь
-    document.body.style.backgroundImage = "url('../img/4.jpg')";
+    document.body.style.backgroundImage = "url('img/4.jpg')";
     greeting.textContent = "Доброй ночи";
     document.body.style.color = "white";
   }
