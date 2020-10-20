@@ -43,13 +43,33 @@ h1 {
   display: block;
   margin: 20px;
   width: auto;
-}
-.greeting-header{}
-
-.task{
+  outline: none;
 }
 
 .task-header{
   margin-bottom: 0.5rem;
   opacity: 0.6;
+}
+
+body,
+#hide {
+  font: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+#name{
+  margin: 0 10px 0;
+  border: none;
+  min-width: 10px;
+  outline: none;
+  border: 0px;
+  background: transparent;
+}
+
+#hide {
+  position: absolute;
+  height: 0;
+  overflow: hidden;
+  white-space: pre;
 }

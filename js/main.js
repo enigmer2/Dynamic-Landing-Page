@@ -22,7 +22,12 @@ function addZero(n) {
 
 // изменение background и текста прветствия
 function setBgAndTitle(hour) {
-  if (hour < 12) {
+  if (hour < 6) {
+    // ночь
+    document.body.style.backgroundImage = "url('img/4.jpg')";
+    greeting.textContent = "Доброй ночи";
+    document.body.style.color = "white";
+  } else if (hour < 12) {
     //утро
     document.body.style.backgroundImage = "url('img/1.jpg')";
     greeting.textContent = "Доброе утро";
@@ -38,11 +43,6 @@ function setBgAndTitle(hour) {
     greeting.textContent = "Добрый вечер";
     document.body.style.color = "white";
     document.body.style.textShadow = "0 0 20px #000";
-  } else {
-    // ночь
-    document.body.style.backgroundImage = "url('img/4.jpg')";
-    greeting.textContent = "Доброй ночи";
-    document.body.style.color = "white";
   }
 }
 
@@ -75,3 +75,13 @@ focus.addEventListener("blur", (e) => setValueToLocalStorage(e, "focus"));
 showTime();
 setValueFromLocalStorage("name", name);
 setValueFromLocalStorage("focus", focus);
+
+let hide = document.getElementById("hide");
+let txt = document.getElementById("name");
+resize();
+txt.addEventListener("input", resize);
+
+function resize() {
+  hide.textContent = txt.value;
+  txt.style.width = hide.offsetWidth + "px";
+}
