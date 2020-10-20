@@ -22,7 +22,7 @@ function addZero(n) {
 
 // изменение background и текста прветствия
 function setBgAndTitle(hour) {
-  if (hour < 6) {
+  if (hour < 8) {
     // ночь
     document.body.style.backgroundImage = "url('img/4.jpg')";
     greeting.textContent = "Доброй ночи";
@@ -49,9 +49,9 @@ function setBgAndTitle(hour) {
 // изменение локальногог хранилища имени
 function setValueFromLocalStorage(localStorageId, element) {
   if (localStorage.getItem(localStorageId) === null) {
-    element.value = `[enter your ${localStorageId}]`;
+    element.textContent = `[enter your ${localStorageId}]`;
   } else {
-    element.value = localStorage.getItem(localStorageId);
+    element.textContent = localStorage.getItem(localStorageId);
   }
 }
 
@@ -59,11 +59,11 @@ function setValueFromLocalStorage(localStorageId, element) {
 function setValueToLocalStorage(e, localStorageId) {
   if (e.type === "keypress") {
     if (e.witch == 13 || e.keyCode == 13) {
-      localStorage.setItem(localStorageId, e.target.value);
+      localStorage.setItem(localStorageId, e.target.textContent);
       e.target.blur();
     }
   } else {
-    localStorage.setItem(localStorageId, e.target.value);
+    localStorage.setItem(localStorageId, e.target.textContent);
   }
 }
 
@@ -75,13 +75,3 @@ focus.addEventListener("blur", (e) => setValueToLocalStorage(e, "focus"));
 showTime();
 setValueFromLocalStorage("name", name);
 setValueFromLocalStorage("focus", focus);
-
-let hide = document.getElementById("hide");
-let txt = document.getElementById("name");
-resize();
-txt.addEventListener("input", resize);
-
-function resize() {
-  hide.textContent = txt.value;
-  txt.style.width = hide.offsetWidth + "px";
-}
