@@ -49,7 +49,7 @@ function setBgAndTitle(hour) {
 // изменение локальногог хранилища имени
 function setValueFromLocalStorage(localStorageId, element) {
   if (localStorage.getItem(localStorageId) === null) {
-    element.textContent = `[enter your ${localStorageId}]`;
+    element.textContent = `[Введите ${localStorageId}]`;
   } else {
     element.textContent = localStorage.getItem(localStorageId);
   }

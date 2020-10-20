@@ -26,15 +26,11 @@ body {
   }
 }
 
-h1 {
-  margin-bottom: 3rem;
-}
-
-
-.greeting{
+.greeting-header, .task-header{
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 2rem;
 }
 .greeting-input, .task-input {
   border: 0px;
