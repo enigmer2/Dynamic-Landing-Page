@@ -2,6 +2,28 @@ const time = document.getElementById("time");
 const greeting = document.getElementById("greeting");
 const name = document.getElementById("name");
 const focus = document.getElementById("focus");
+const textLinkDataStorage = {
+        night:{
+          link:"url('img/4.jpg')",
+          text: "Доброй ночи",
+          textColor: "white",
+        },
+        monning:{
+          link:"url('img/1.jpg')",
+          text: "Доброе утро",
+          textColor: "white",
+        },
+        day:{
+          link:"url('img/2.jpg')",
+          text: "Добрый день",
+          textColor: "white",
+        },
+        evening:{
+          link:"url('img/3.jpg')",
+          text: "Добрый вечер",
+          textColor: "white",
+        }
+      };
 
 //функция показывает время
 function showTime() {
@@ -22,28 +44,26 @@ function addZero(n) {
 
 // изменение background и текста прветствия
 function setBgAndTitle(hour) {
-  if (hour < 8) {
+  if (hour > 20 || 0 < hour < 8) {
     // ночь
-    document.body.style.backgroundImage = "url('img/4.jpg')";
-    greeting.textContent = "Доброй ночи";
-    document.body.style.color = "white";
-  } else if (hour < 12) {
+    whatTimeIs(textLinkDataStorage.night);
+  } else if (8 < hour < 12) {
     //утро
-    document.body.style.backgroundImage = "url('img/1.jpg')";
-    greeting.textContent = "Доброе утро";
-  } else if (hour < 17) {
+    whatTimeIs(textLinkDataStorage.monning);
+  } else if (12 < hour < 17) {
     // полдень
-    document.body.style.backgroundImage = "url('img/2.jpg')";
-    greeting.textContent = "Добрый день";
-    document.body.style.color = "white";
-    document.body.style.textShadow = "0 0 20px #000";
-  } else if (hour < 20) {
+    whatTimeIs(textLinkDataStorage.day);
+  } else if (17 < hour < 20) {
     // вечер
-    document.body.style.backgroundImage = "url('img/3.jpg')";
-    greeting.textContent = "Добрый вечер";
-    document.body.style.color = "white";
-    document.body.style.textShadow = "0 0 20px #000";
+    whatTimeIs(textLinkDataStorage.evening);
   }
+}
+//принимает обьект и парсит его для функции setBgAndTitle
+function whatTimeIs(obj) {
+  document.body.style.backgroundImage = obj.link;
+  greeting.textContent = obj.text;
+  document.body.style.color = obj.textColor;
+  document.body.style.textShadow = "0 0 20px #000";
 }
 
 // изменение локальногог хранилища имени

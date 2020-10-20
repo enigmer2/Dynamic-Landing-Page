@@ -25,16 +25,18 @@ body {
     font-size: 6rem;
   }
 }
-.greeting{
+.greeting {
   float: left;
 }
-.greeting-header, .task-header{
+.greeting-header,
+.task-header {
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
 }
-.greeting-input, .task-input {
+.greeting-input,
+.task-input {
   border: 0px;
   background: transparent;
   font-size: 2rem;
@@ -44,14 +46,16 @@ body {
   outline: none;
 }
 
-.task-header{
+.task-header {
   margin-bottom: 0.5rem;
   opacity: 0.6;
 }
-h2{
+h2 {
   margin-top: 1rem;
 }
-.wrapper{
+.wrapper {
+  padding: 0 60px;
   display: flex;
   flex-direction: row;
+  justify-content: space-around;
 }
