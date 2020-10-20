@@ -9,22 +9,24 @@
       href="https://fonts.googleapis.com/css?family=Quicksand&display=swap"
     />
   </head>
+
   <body>
-
+    <header>
+      <h1>Dynamic Landing Page</h1>
+    </header>
     <main>
-
-      <h1>
+      <section>
         <time id="time" class="time-style"></time>
-      </h1>
-
-      <p id="greeting" class="greeting-header"></p>
-      <span id="name" class="greeting-input" contenteditable="true"></span>
-
-      <p class="task-header">Какая у тебя задача на сегодня ?</p>
-      <span id="focus" class="task-input" contenteditable="true"></span>
+        <h2 id="greeting" class="greeting-header"></h2>
+        <p id="name" class="greeting-input" contenteditable="true"></p>
+      </section>
+      <section>
+        <h2>Задание на сегодня</h2>
+        <p class="task-header">Какая у тебя задача на сегодня ?</p>
+        <p id="focus" class="task-input" contenteditable="true"></p>
+      </section>
     </main>
 
     <script src="js/main.js"></script>
-
   </body>
 </html>
