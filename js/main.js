@@ -44,7 +44,7 @@ function addZero(n) {
 
 // изменение background и текста прветствия
 function setBgAndTitle(hour) {
-  if (hour > 20 || 0 < hour < 8) {
+  if (hour > 20 && 0 < hour < 8) {
     // ночь
     whatTimeIs(textLinkDataStorage.night);
   } else if (8 < hour < 12) {
